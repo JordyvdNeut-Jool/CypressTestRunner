@@ -1,0 +1,23 @@
+{
+  "name": "cypress-test-runner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "node-cmd": "^3.0.0",
+    "node-run-cmd": "^1.0.1"
+  },
+  "devDependencies": {
+    "cypress": "^4.0.1",
+    "start-server-and-test": "^1.10.8"
+  },
+  "scripts": {
+    "test:record": "cypress run --record --key 48b66b7a-335a-4b15-aa55-4e19b454ba9e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "author": "",
+  "license": "ISC"
+}
