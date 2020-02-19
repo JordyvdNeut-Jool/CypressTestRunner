@@ -2,15 +2,28 @@ var fs = require('fs');
 var cmd = require('node-cmd');
 
 module.exports.prepairData = (data) => {
-  filename = './cypress/integration/tests/' + data.title + '.spec.js';
-  
+  filePath = './cypress/integration/tests/' + data.title + '.spec.js';
+  prepairedbeforeEach = "";
+  prepairedCode = '';
+  prepairedCode += 'describe("' + data.title + '", ';
+  prepairedCode += 'function(){\n';
+  prepairedCode += '\tbeforeEach(function (){\n';
+  prepairedCode += prepairedbeforeEach + "\n";
+  prepairedCode += '\t})\n';
+  prepairedCode += '\tit("' + data.description + '", function (){\n';
+  prepairedCode += data.code;
+  prepairedCode += '\t})\n';
+  prepairedCode += '})\n';
+  return { filePath, prepairedCode };
 }
 
 module.exports.saveCode = (data) => {
   console.log('saving');
-  filename = './cypress/integration/tests/'+data.title+'.spec.js';
+  prepairedData = this.prepairData(data);
+  filePath = prepairedData.filePath;
+  prepairedCode = prepairedData.prepairedCode;
 
-  fs.writeFile(filename, data.code, function (err) {
+  fs.writeFile(filePath, prepairedCode, function (err) {
     if (err) {
       return console.log('Error: ' + err)
     }
