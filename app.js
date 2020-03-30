@@ -8,11 +8,26 @@ app.use(express.json());
 const port = 3000;
 
 // Route
-app.post('/', (req, res) => {
-  const data = req.body;
+app.post('/readTests', (request, response) => {
+  fileNames = configureFiles.readTestNames();
+  response.json({
+    fileNames: fileNames
+  });
+});
+
+app.post('/saveTest', (request, response) => {
+  const data = request.body;
   configureFiles.saveCode(data);
+});
+
+app.post('/openRunner', (request, response) => {
   configureFiles.openCypressRunner();
-})
+});
+
+app.post('/openTest', (request, response) => {
+  code = request.body.code;
+  configureFiles.openRecentTest(code);
+});
 
 // Set port to 3000
 app.listen(port);
