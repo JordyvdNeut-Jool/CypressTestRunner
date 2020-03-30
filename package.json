@@ -10,13 +10,13 @@
     "node-run-cmd": "^1.0.1"
   },
   "devDependencies": {
-    "cypress": "^4.0.1",
+    "cypress": "^4.0.2",
+    "cypress-file-upload": "^3.5.3",
     "start-server-and-test": "^1.10.8"
   },
   "scripts": {
     "test:record": "cypress run --record --key 48b66b7a-335a-4b15-aa55-4e19b454ba9e",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:open": "cypress open"
   },
   "author": "",
   "license": "ISC"
