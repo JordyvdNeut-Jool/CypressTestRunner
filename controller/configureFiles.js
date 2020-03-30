@@ -1,11 +1,14 @@
 var fs = require('fs');
 var cmd = require('node-cmd');
 
+const testFolder = "./cypress/integration/tests/";
+
 module.exports.prepairData = (data) => {
-  filePath = './cypress/integration/tests/' + data.title + '.spec.js';
+  let name = data.name.split(" ").join("_")
+  filePath = testFolder + name + '.spec.js';
   prepairedbeforeEach = "";
   prepairedCode = '';
-  prepairedCode += 'describe("' + data.title + '", ';
+  prepairedCode += 'describe("' + data.name + '", ';
   prepairedCode += 'function(){\n';
   prepairedCode += '\tbeforeEach(function (){\n';
   prepairedCode += prepairedbeforeEach + "\n";
@@ -18,7 +21,6 @@ module.exports.prepairData = (data) => {
 }
 
 module.exports.saveCode = (data) => {
-  console.log('saving');
   prepairedData = this.prepairData(data);
   filePath = prepairedData.filePath;
   prepairedCode = prepairedData.prepairedCode;
@@ -32,12 +34,27 @@ module.exports.saveCode = (data) => {
 
 // opens the cypress runner
 module.exports.openCypressRunner = () => {
-  console.log('starting');
   cmd.get('npm run cypress:open', function (err, data, stderr) {
     if (!err) {
-      console.log('result: ' + data);
+      console.log("opened cypress");
     } else {
       console.log('Error: ' + err);
     }
   });
+}
+module.exports.openRecentTest = (code) => {
+  let data = {code: code, name: "RecentTest", description: "Last recorded test"};
+  this.saveCode(data);
+  var filePath = ".\\cypress\\integration\\tests\\" + data.name + ".spec.js"
+  cmd.get('npx cypress run --spec "' + filePath + '" --browser chrome --no-exit', function (err, data, stderr) {
+    if (!err) {
+      console.log("opened cypress");
+    } else {
+      console.log('Error: ' + err);
+    }
+  });
+}
+
+module.exports.readTestNames = () => {
+  return fs.readdirSync(testFolder, "utf-8");
 }
