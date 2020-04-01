@@ -2,9 +2,9 @@
 
 This node server is needed for the [Chrome cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder)
 
-## Getting Started
+## Getting Started With Cypress Node Server
 
-Clone this repository and open the files in your .
+Clone this repository and open the files in your editor.
 When you have cloned the extention. Install the packages with the following command.
 
 ```
@@ -22,7 +22,7 @@ Now you can close cypress and run the server
 node app
 ```
 
-## Getting Started
+## Getting Started With Cypress Recorder extension
 
 Clone the [Chrome cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder)
 When you have cloned the extention. Install the packages with.
