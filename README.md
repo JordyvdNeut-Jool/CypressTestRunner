@@ -2,29 +2,31 @@
 
 This node server is needed for the Chrome extension [Cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder)
 
-## Getting Started With Cypress Node Server
+## Getting Started With The Cypress Recorder
 
+First we will have to install a node server that can run the cypress for us.
 Clone this repository and open the files in your editor.
-When you have cloned the extention. Install the packages with the following command.
+When you have cloned the repository, install the packages with the following command.
 
 ```
 npm install
 ```
 
-To complete the installation of cypress, run the following command. This will open cypress and create the needed files
+To complete the installation of cypress, run the following command. This will open cypress and create the needed files.
 
 ```
 npm run cypress:open
 ```
 
-Now you can close cypress and run the server
+Now you can close cypress and run the server with.
+
 ```
 node app
 ```
 
-## Getting Started With Cypress Recorder extension
+Next we will set up the extension.
 
-Clone the [Chrome cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder)
+Clone the Chrome extention [Cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder)
 When you have cloned the extention. Install the packages with.
 
 ```
@@ -40,3 +42,4 @@ npm run build
 When your build is done your have to open your chrome browser and go to manage extensions.
 
 Turn Developer mode on, 'load unpacked' here you have to select your /your/project/dist folder.
+The installations are done now you can start testing!
