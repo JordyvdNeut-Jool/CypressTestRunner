@@ -45,7 +45,7 @@ module.exports.openCypressRunner = () => {
 module.exports.openRecentTest = (code) => {
   let data = {code: code, name: "RecentTest", description: "Last recorded test"};
   this.saveCode(data);
-  var filePath = ".\\cypress\\integration\\tests\\" + data.name + ".spec.js"
+  var filePath = ".\\cypress\\integration\\examples\\" + data.name + ".spec.js"
   cmd.get('npx cypress run --spec "' + filePath + '" --browser chrome --no-exit', function (err, data, stderr) {
     if (!err) {
       console.log("opened cypress");
