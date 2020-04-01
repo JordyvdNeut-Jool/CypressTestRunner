@@ -10,7 +10,7 @@
     "node-run-cmd": "^1.0.1"
   },
   "devDependencies": {
-    "cypress": "^4.0.2",
+    "cypress": "^4.3.0",
     "cypress-file-upload": "^3.5.3",
     "start-server-and-test": "^1.10.8"
   },
