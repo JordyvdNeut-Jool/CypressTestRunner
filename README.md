@@ -1,6 +1,6 @@
-# Cypress test runner, node server
+# Cypress Recorder Extension
 
-This node server is needed for the [Chrome cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder)
+This node server is needed for the Chrome extension [Cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder)
 
 ## Getting Started With Cypress Node Server
 
