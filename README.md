@@ -4,7 +4,7 @@ This node server is needed for the Chrome extension [Cypress recorder](https://g
 
 ## Getting Started With The Cypress Recorder
 
-First we will have to install a node server that can run the cypress for us.
+### First we will have to install a node server that can run the cypress for us.
 Clone this repository and open the files in your editor.
 When you have cloned the repository, install the packages with the following command.
 
