@@ -24,7 +24,7 @@ Now you can close cypress and run the server with.
 node app
 ```
 
-Next we will set up the extension.
+### Next we will set up the extension.
 
 Clone the Chrome extention [Cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder)
 When you have cloned the extention. Install the packages with.
