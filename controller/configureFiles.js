@@ -1,7 +1,7 @@
 var fs = require('fs');
 var cmd = require('node-cmd');
 
-const testFolder = "./cypress/integration/tests/";
+const testFolder = "./cypress/integration/examples/";
 
 module.exports.prepairData = (data) => {
   let name = data.name.split(" ").join("_")
