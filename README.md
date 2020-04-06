@@ -1,6 +1,6 @@
 # Cypress Recorder Extension
 
-This repository is a node server, it automates to open the Cypress test runner. This node server is used for the Chrome extension [Cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder).
+This repository is a node server, it automates to open the Cypress test runner. This node server is used for the Chrome extension [Cypress recorder](https://github.com/JordyvdNeut-Jool/CypressRecorderTest).
 
 ## Getting Started With The Cypress Recorder
 
