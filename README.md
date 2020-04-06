@@ -32,7 +32,7 @@ When you have cloned the extention. Install the packages with.
 npm install
 ```
 
-We are going to install the manifest.json and images.
+We are going to install the manifest.json and images. You have to do this in a bash terminal.
 
 ```
 npm run clean
