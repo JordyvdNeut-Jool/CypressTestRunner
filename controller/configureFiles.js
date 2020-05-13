@@ -3,6 +3,7 @@ var cmd = require('node-cmd');
 
 const testFolder = "./cypress/integration/examples/";
 
+// Format the code
 module.exports.prepairData = (data) => {
   let name = data.name.split(" ").join("_")
   filePath = testFolder + name + '.spec.js';
@@ -20,6 +21,7 @@ module.exports.prepairData = (data) => {
   return { filePath, prepairedCode };
 }
 
+// Saves the code as file in $testFolder
 module.exports.saveCode = (data) => {
   prepairedData = this.prepairData(data);
   filePath = prepairedData.filePath;
@@ -42,6 +44,8 @@ module.exports.openCypressRunner = () => {
     }
   });
 }
+
+// Save the code as RecentTest file and run that file
 module.exports.openRecentTest = (code) => {
   let data = {code: code, name: "RecentTest", description: "Last recorded test"};
   this.saveCode(data);
@@ -55,6 +59,7 @@ module.exports.openRecentTest = (code) => {
   });
 }
 
+// read all filenames in $testFolder
 module.exports.readTestNames = () => {
   return fs.readdirSync(testFolder, "utf-8");
 }
