@@ -8,7 +8,7 @@ app.use(express.json());
 const port = 3000;
 
 // Route
-app.post('/readTests', (request, response) => {
+app.get('/readTests', (request, response) => {
   fileNames = configureFiles.readTestNames();
   response.json({
     fileNames: fileNames
