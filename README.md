@@ -25,8 +25,8 @@ node app
 
 ### Next we will set up the extension.
 
-Clone the Chrome extention [Cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder)
-When you have cloned the extention. Install the packages with.
+Clone the Chrome extension [Cypress recorder](https://github.com/JordyvdNeut-Jool/Cypress-Recorder)
+when you have cloned the extention. Install the packages with.
 
 ```
 npm install
