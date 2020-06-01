@@ -1,6 +1,5 @@
 var fs = require('fs');
 var cmd = require('node-cmd');
-var appjs = require('../app.js');
 
 // Variable to save the tests
 const testFolder = "./cypress/integration/examples/";
@@ -8,8 +7,8 @@ const testFolder = "./cypress/integration/examples/";
 // Format the code
 module.exports.prepairData = (data) => {
   let name = data.name.split(" ").join("_")
-  
-  filePath = appjs.testFolder + name + '.spec.js';
+  location = data.location ? data.location : testFolder;
+  filePath = location + name + '.spec.js';
   prepairedbeforeEach = "";
   prepairedCode = `describe("${data.name}", function(){
   beforeEach(function (){
@@ -46,9 +45,9 @@ module.exports.openCypressRunner = () => {
 
 // Save the code as RecentTest file and run that file
 module.exports.openRecentTest = (code) => {
-  let data = {code: code, name: "RecentTest", description: "Last recorded test"};
+  let data = {code: code, name: "RecentTest", description: "Last recorded test", location: testFolder};
   this.saveCode(data);
-  var filePath = appjs.testFolder + data.name + ".spec.js"
+  var filePath = testFolder + data.name + ".spec.js"
   cmd.get('npx cypress run --spec "' + filePath + '" --browser chrome --no-exit', function (err, data, stderr) {
     if (!err) {
       console.log("opened cypress");
@@ -60,5 +59,5 @@ module.exports.openRecentTest = (code) => {
 
 // read all filenames in $testFolder
 module.exports.readTestNames = () => {
-  return fs.readdirSync(appjs.testFolder, "utf-8");
+  return fs.readdirSync(testFolder, "utf-8");
 }
