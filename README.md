@@ -47,4 +47,7 @@ npm run build
 When your build is done your have to open your chrome browser and go to manage extensions.
 
 Turn Developer mode on, 'load unpacked' here you have to select your /your/project/dist folder.
+
+When you make use of the location input, make sure that you have audit set to true in your .npmrc file.
+
 The installations are done now you can start testing!
