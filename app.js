@@ -4,9 +4,6 @@ var app = express();
 
 app.use(express.json());
 
-// Test directory path
-module.exports.testFolder = "./cypress/integration/examples/";
-
 // set host port
 const port = 3000;
 
